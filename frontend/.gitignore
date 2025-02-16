@@ -1,0 +1,30 @@
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Next.js build output
+.next/
+out/
+
+# Production environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Debug
+.npm/
+.yarn/
+
+# IDE directories
+.idea/
+.vscode/
+.history/
+
+# Mac System files
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
