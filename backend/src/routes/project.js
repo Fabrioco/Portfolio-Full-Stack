@@ -11,4 +11,13 @@ routerProject.get("/", async (req, res) => {
   }
 });
 
+routerProject.post("/", async (req, res) => {
+  try {
+    const project = await Project.create(req.body);
+    res.json(project);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 module.exports = routerProject;
