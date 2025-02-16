@@ -1,15 +1,8 @@
-# Ignorar node_modules global
-node_modules/
-
-# Ignorar arquivos do frontend
-frontend/node_modules/
-frontend/build/
-frontend/.env
-frontend/.gitignore
-
-# Ignorar arquivos do backend
+# Ignorar node_modules do backend
 backend/node_modules/
+
+# Ignorar variáveis de ambiente do backend
 backend/.env
 
-# Outros arquivos que você não quer versionar
+# Ignorar logs e outros arquivos desnecessários
 *.log
