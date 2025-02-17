@@ -22,9 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body
-        className={`${montserrat.className} ${montserratAlternates.className} antialiased`}
+        className={`${montserrat.className} ${montserratAlternates.className} antialiased bg-background`}
       >
         {children}
       </body>
