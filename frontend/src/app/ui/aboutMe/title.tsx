@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-export function Title() {
+export function TitleAboutMe() {
   return (
     <motion.h1
       className="text-3xl font-bold text-title w-full"

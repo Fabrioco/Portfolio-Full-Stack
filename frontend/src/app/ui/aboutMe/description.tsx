@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export function Description() {
+export function DescriptionAboutMe() {
   return (
     <>
       <motion.p
