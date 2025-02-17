@@ -1,4 +1,4 @@
-export function NavButtons() {
+export function NavButtonsLearnings() {
   return (
     <nav className="flex gap-2 items-center overflow-x-auto">
       <button>Front-End</button>
