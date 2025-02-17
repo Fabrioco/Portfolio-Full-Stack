@@ -10,18 +10,17 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="mx-auto flex flex-col items-center">
-      <header className="w-11/12 flex flex-row items-center justify-between mb-20 mt-10">
+      <motion.header
+        initial={{ opacity: 0, y: -300 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -300 }}
+        transition={{ duration: 0.5 }}
+        className="w-11/12 flex flex-row items-center justify-between mb-20 mt-10"
+      >
         <ToggleSwitch />
         <ToggleSidebar />
-      </header>
-      <motion.div
-        initial={{ opacity: 0, x: -300 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 300 }}
-        transition={{ duration: 1 }}
-      >
-        {children}
-      </motion.div>
+      </motion.header>
+      <div>{children}</div>
     </div>
   );
 }
