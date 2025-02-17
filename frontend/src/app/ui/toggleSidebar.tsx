@@ -31,7 +31,7 @@ export const ToggleSidebar = () => {
             <Link href="/dashboard">Home</Link>
           </li>
           <li className="mb-3">
-            <Link href="/aboutMe">Sobre mim</Link>
+            <Link href="/dashboard/aboutMe">Sobre mim</Link>
           </li>
           <li className="mb-3">
             <Link href="/projects">Projetos</Link>
