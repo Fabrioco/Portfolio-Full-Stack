@@ -1,11 +1,11 @@
-import { DescriptionAboutMe } from "@/app/ui/aboutMe/description";
-import { TitleAboutMe } from "@/app/ui/aboutMe/title";
-import { GridBackEndLearnings } from "@/app/ui/learnings/gridBackEnd";
-import { GridDatabaseLearnings } from "@/app/ui/learnings/gridDatabase";
-import { GridFrontEndLearnings } from "@/app/ui/learnings/gridFrontEnd";
-import { GridOthersLearnings } from "@/app/ui/learnings/gridOthers";
-import { NavButtonsLearnings } from "@/app/ui/learnings/navButtons";
-import { TitleLearnings } from "@/app/ui/learnings/title";
+import { DescriptionAboutMe } from "@/ui/aboutMe/description";
+import { TitleAboutMe } from "@/ui/aboutMe/title";
+import { GridBackEndLearnings } from "@/ui/learnings/gridBackEnd";
+import { GridDatabaseLearnings } from "@/ui/learnings/gridDatabase";
+import { GridFrontEndLearnings } from "@/ui/learnings/gridFrontEnd";
+import { GridOthersLearnings } from "@/ui/learnings/gridOthers";
+import { NavButtonsLearnings } from "@/ui/learnings/navButtons";
+import { TitleLearnings } from "@/ui/learnings/title";
 
 export default function AboutMe() {
   return (
