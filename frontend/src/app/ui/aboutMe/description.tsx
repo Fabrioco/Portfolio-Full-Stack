@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function DescriptionAboutMe() {
   return (
-    <>
+    <motion.div className="w-10/12 lg:w-1/2  text-justify text-paragraph mb-4">
       <motion.p
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
@@ -35,6 +35,6 @@ export function DescriptionAboutMe() {
         aberto para freelances. Gosto de desafios, aprendizado constante e de
         transformar ideias em soluções digitais.
       </motion.p>
-    </>
+    </motion.div>
   );
 }
