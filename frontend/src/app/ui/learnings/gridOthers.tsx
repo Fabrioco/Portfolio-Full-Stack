@@ -1,7 +1,14 @@
+"use client";
+
+import { motion } from "framer-motion";
 export function GridOthersLearnings() {
   return (
-    <div className="w-1/2 grid grid-cols-2 md:grid-cols-3 gap-5">
-      <div>
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-5">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -30,8 +37,12 @@ export function GridOthersLearnings() {
             d="M4 8c0 1.289 1.019 2.333 2.275 2.333H8.55V5.667H6.275C5.019 5.667 4 6.71 4 8z"
           />
         </svg>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -50,8 +61,8 @@ export function GridOthersLearnings() {
             <path d="M15.194 10.98c-.223-.287-1.479-.138-2.048-.069-.17.022-.197-.128-.043-.24 1-.705 2.645-.502 2.836-.267.192.24-.053 1.89-.99 2.68-.143.123-.281.06-.218-.1.213-.53.687-1.72.463-2.003z" />
           </g>
         </svg>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -149,7 +160,7 @@ export function GridOthersLearnings() {
             </g>
           </g>
         </svg>
-      </div>
+      </motion.div>
     </div>
   );
 }

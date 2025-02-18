@@ -1,7 +1,14 @@
+"use client";
+
+import { motion } from "framer-motion";
 export function GridDatabaseLearnings() {
   return (
-    <div className="w-1/2 grid grid-cols-2 md:grid-cols-3 gap-5">
-      <div>
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-5">
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -33,8 +40,12 @@ export function GridDatabaseLearnings() {
             ></path>
           </g>
         </svg>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="100"
@@ -75,7 +86,7 @@ export function GridDatabaseLearnings() {
             fill="#eeab37"
           />
         </svg>
-      </div>
+      </motion.div>
     </div>
   );
 }
