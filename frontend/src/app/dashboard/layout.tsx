@@ -1,6 +1,6 @@
 "use client";
-import { ToggleSidebar } from "../ui/toggleSidebar";
-import { ToggleSwitch } from "../ui/toggleSwitch";
+import { ToggleSidebar } from "../../ui/toggleSidebar";
+import { ToggleSwitch } from "../../ui/toggleSwitch";
 import { motion } from "framer-motion";
 
 export default function DashboardLayout({
