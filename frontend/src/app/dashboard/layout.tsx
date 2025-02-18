@@ -20,7 +20,7 @@ export default function DashboardLayout({
         <ToggleSwitch />
         <ToggleSidebar />
       </motion.header>
-      <div>{children}</div>
+      <div className="w-11/12 h-auto mx-auto">{children}</div>
     </div>
   );
 }
