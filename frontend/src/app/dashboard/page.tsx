@@ -1,5 +1,5 @@
-import { Profile } from "../../ui/dashboard/profile";
-import { Description } from "../../ui/dashboard/description";
+import { Profile } from "../ui/dashboard/profile";
+import { Description } from "../ui/dashboard/description";
 
 export default function Dashboard() {
   return (

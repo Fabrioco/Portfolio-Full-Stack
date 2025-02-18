@@ -1,6 +1,6 @@
-import { NavButtonsProjects } from "@/ui/projects/navButton";
-import { TitleProject } from "@/ui/projects/titleProject";
-import { ProjectsList } from "@/ui/projects/projectsList";
+import { NavButtonsProjects } from "@/app/ui/projects/navButton";
+import { TitleProject } from "@/app/ui/projects/titleProject";
+import { ProjectsList } from "@/app/ui/projects/projectsList";
 
 export default function Projects() {
   return (
