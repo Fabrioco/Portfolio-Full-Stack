@@ -14,11 +14,11 @@ export default function AboutMe() {
         <div className="text-center w-10/12 md:w-1/2">
           <TitleAboutMe />
         </div>
-        <div className="w-10/12 md:w-1/2  text-justify text-paragraph mb-4">
+        <div className="w-10/12 lg:w-1/2  text-justify text-paragraph mb-4">
           <DescriptionAboutMe />
         </div>
       </div>
-      <div className="hidden w-11/12 md:w-1/2 md:flex flex-col justify-center gap-10">
+      <div className="hidden w-11/12 md:w-1/2 lg:flex flex-col justify-center gap-10">
         <TitleLearnings />
         <NavButtonsLearnings />
         <GridFrontEndLearnings />
