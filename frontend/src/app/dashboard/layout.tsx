@@ -1,4 +1,5 @@
 "use client";
+import { Footer } from "@/ui/footer";
 import { ToggleSidebar } from "../../ui/toggleSidebar";
 import { ToggleSwitch } from "../../ui/toggleSwitch";
 import { motion } from "framer-motion";
@@ -21,6 +22,7 @@ export default function DashboardLayout({
         <ToggleSidebar />
       </motion.header>
       <div className="w-11/12 h-auto mx-auto">{children}</div>
+      <Footer />
     </div>
   );
 }
