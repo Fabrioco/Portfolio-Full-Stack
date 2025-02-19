@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Para navegadores baseados em WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 6px; /* Largura da scrollbar */
+  height: 6px; /* Altura da scrollbar (para rolagem horizontal) */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Fundo da scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Cor do "thumb" (barra de rolagem) */
+  border-radius: 10px; /* Deixa arredondado */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor ao passar o mouse */
+}

@@ -1,8 +1,5 @@
-"use client";
 import { Footer } from "@/ui/footer";
-import { ToggleSidebar } from "../../ui/toggleSidebar";
-import { ToggleSwitch } from "../../ui/toggleSwitch";
-import { motion } from "framer-motion";
+import { Header } from "@/ui/header";
 
 export default function DashboardLayout({
   children,
@@ -10,18 +7,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto flex flex-col items-center">
-      <motion.header
-        initial={{ opacity: 0, y: -300 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -300 }}
-        transition={{ duration: 0.5 }}
-        className="w-11/12 flex flex-row items-center justify-between mb-20 mt-10"
-      >
-        <ToggleSwitch />
-        <ToggleSidebar />
-      </motion.header>
-      <div className="w-11/12 h-auto mx-auto">{children}</div>
+    <div className="w-full h-full">
+      <Header />
+      <div className="w-11/12 mx-auto mb-20">{children}</div>
       <Footer />
     </div>
   );
