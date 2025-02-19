@@ -1,6 +1,7 @@
 "use client";
 import { Hand } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 export function Profile() {
   return (
     <motion.div
@@ -17,8 +18,13 @@ export function Profile() {
         </i>
         <span className="absolute w-4 h-4 bg-main rotate-45 -bottom-2 left-1"></span>
       </p>
-      {/* <Image src="https://via.placeholder.com/150" alt="Vercel Logo" width={100} height={24} /> */}
-      <div className="w-full h-full rounded-full bg-blue-500"></div>
+      <Image
+        src="/profile.jpeg"
+        alt="Vercel Logo"
+        width={500}
+        height={500}
+        className="w-full h-full rounded-full"
+      />
     </motion.div>
   );
 }
