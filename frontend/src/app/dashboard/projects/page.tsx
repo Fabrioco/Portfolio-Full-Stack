@@ -4,7 +4,7 @@ import { ProjectsList } from "@/ui/projects/projectsList";
 
 export default function Projects() {
   return (
-    <div className="h-full flex flex-col  justify-center gap-10">
+    <div className="h-full flex flex-col gap-10">
       <TitleProject />
       <NavButtonsProjects />
       <ProjectsList />
