@@ -1,10 +1,17 @@
 "use client";
 import { SidebarSimple, X } from "@phosphor-icons/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const ToggleSidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [width, setWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="relative z-50">
@@ -36,9 +43,11 @@ export const ToggleSidebar = () => {
           <li className="mb-3">
             <Link href="/dashboard/projects">Projetos</Link>
           </li>
-          <li className="mb-3">
-            <Link href="/dashboard/learnings">Conhecimentos</Link>
-          </li>
+          {width < 1024 && (
+            <li className="mb-3">
+              <Link href="/dashboard/learnings">Conhecimentos</Link>
+            </li>
+          )}
           <li>
             <Link href="/dashboard/contacts">Contatos</Link>
           </li>
