@@ -5,7 +5,12 @@ import { motion } from "framer-motion";
 export function GridFrontEndLearnings() {
   return (
     <div className="w-full grid grid-cols-3 gap-5">
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -26,7 +31,12 @@ export function GridFrontEndLearnings() {
           ></path>
         </svg>
       </motion.div>
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -47,7 +57,12 @@ export function GridFrontEndLearnings() {
           ></path>
         </svg>
       </motion.div>
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -63,7 +78,12 @@ export function GridFrontEndLearnings() {
           ></path>
         </svg>
       </motion.div>
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -109,7 +129,12 @@ export function GridFrontEndLearnings() {
           ></polygon>
         </svg>
       </motion.div>
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -135,7 +160,12 @@ export function GridFrontEndLearnings() {
           ></path>
         </svg>
       </motion.div>
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -164,7 +194,12 @@ export function GridFrontEndLearnings() {
           </g>
         </svg>
       </motion.div>
-      <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1, rotate: 360 }} transition={{ duration: 1 }} >
+      <motion.div
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1, rotate: 360 }}
+        exit={{ opacity: 0, scale: 0 }}
+        transition={{ duration: 1 }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"

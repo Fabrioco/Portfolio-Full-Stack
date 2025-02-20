@@ -1,10 +1,6 @@
 import { DescriptionAboutMe } from "@/ui/aboutMe/description";
 import { TitleAboutMe } from "@/ui/aboutMe/title";
-import { GridBackEndLearnings } from "@/ui/learnings/gridBackEnd";
-import { GridDatabaseLearnings } from "@/ui/learnings/gridDatabase";
-import { GridFrontEndLearnings } from "@/ui/learnings/gridFrontEnd";
-import { GridOthersLearnings } from "@/ui/learnings/gridOthers";
-import { NavButtonsLearnings } from "@/ui/learnings/navButtons";
+import { SelectionCategory } from "@/ui/learnings/selectionCategory";
 import { TitleLearnings } from "@/ui/learnings/title";
 
 export default function AboutMe() {
@@ -16,11 +12,7 @@ export default function AboutMe() {
       </div>
       <div className="hidden w-11/12 md:w-1/2 lg:flex flex-col justify-center gap-10">
         <TitleLearnings />
-        <NavButtonsLearnings />
-        <GridFrontEndLearnings />
-        {/* <GridBackEndLearnings /> */}
-        {/* <GridDatabaseLearnings /> */}
-        {/* <GridOthersLearnings /> */}
+        <SelectionCategory />
       </div>
     </div>
   );
