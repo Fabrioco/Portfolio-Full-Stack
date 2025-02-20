@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const database = require("../config/database");
+const { link } = require("../routes/project");
 
 const Project = database.define(
   "projects",
@@ -24,6 +25,10 @@ const Project = database.define(
     },
     image: {
       type: DataTypes.BLOB("long"),
+      allowNull: false,
+    },
+    link: {
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
   },
