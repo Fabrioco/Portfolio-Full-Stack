@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Project } from "./project";
+import { ModalAddProject } from "./modalAddProject";
 
 interface ProjectData {
   id: number;
@@ -14,6 +15,19 @@ interface ProjectData {
 
 export function ProjectsList() {
   const [projects, setProjects] = useState<ProjectData[]>([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.altKey && event.ctrlKey && event.key.toLowerCase() === "p") {
+        event.preventDefault();
+        setIsOpen((prev) => !prev);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   useEffect(() => {
     async function fetchProjects() {
@@ -32,9 +46,7 @@ export function ProjectsList() {
 
     fetchProjects();
   }, []);
-
   console.log(projects);
-
   return (
     <div className="w-full overflow-x-auto flex flex-row md:gap-10 gap-5 items-center">
       {projects.map((project, index) => (
@@ -48,6 +60,11 @@ export function ProjectsList() {
           <Project project={project} />
         </motion.div>
       ))}
+      {isOpen && (
+        <AnimatePresence>
+          <ModalAddProject setIsOpen={setIsOpen} />
+        </AnimatePresence>
+      )}
     </div>
   );
 }
