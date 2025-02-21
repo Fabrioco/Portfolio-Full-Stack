@@ -10,18 +10,17 @@ routerProject.get("/", async (req, res) => {
   try {
     const projects = await Project.findAll();
 
-    // Corrigir para garantir que o prefixo seja único
     const projectsWithImage = projects.map((project) => {
-      let imageBase64 = project.image.toString("base64"); // Converte o Buffer para Base64
+      let imageBase64 = project.image.toString("base64"); 
 
-      // Se a imagem já tem o prefixo correto, mantemos, caso contrário, adicionamos o prefixo
+      
       if (!imageBase64.startsWith("data:image/png;base64,")) {
         imageBase64 = `data:image/png;base64,${imageBase64}`;
       }
 
       return {
         ...project.dataValues,
-        image: imageBase64, // Aqui a imagem será retornada corretamente com o prefixo único
+        image: imageBase64, 
       };
     });
 
@@ -34,9 +33,8 @@ routerProject.get("/", async (req, res) => {
 
 routerProject.post("/", upload.single("image"), async (req, res) => {
   try {
-    const { title, category, time_worked, image, link } = req.body;
+    const { title, category, time_worked, image, link, tag } = req.body;
 
-    // Converte a imagem de base64 para buffer
     const imageBuffer = Buffer.from(image, "base64");
 
     const project = await Project.create({
@@ -45,6 +43,7 @@ routerProject.post("/", upload.single("image"), async (req, res) => {
       time_worked,
       image: imageBuffer,
       link,
+      tag,
     });
 
     res.status(201).json(project);
