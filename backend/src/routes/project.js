@@ -33,9 +33,8 @@ routerProject.get("/", async (req, res) => {
 
 routerProject.post("/", upload.single("image"), async (req, res) => {
   try {
-    const { title, category, time_worked, image, link, tag } = req.body;
-
-    const imageBuffer = Buffer.from(image, "base64");
+    const { title, category, time_worked, link, tag } = req.body;
+    const imageBuffer = req.file.buffer; 
 
     const project = await Project.create({
       title,
@@ -49,8 +48,7 @@ routerProject.post("/", upload.single("image"), async (req, res) => {
     res.status(201).json(project);
   } catch (error) {
     console.log(error);
-    res.status(500).send("Erro ao criar projeto");
+    res.status(500).json({ error: "Erro ao criar projeto" }); 
   }
 });
-
 module.exports = routerProject;

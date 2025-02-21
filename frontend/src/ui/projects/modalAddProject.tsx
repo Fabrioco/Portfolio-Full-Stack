@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 
 export function ModalAddProject({
@@ -8,63 +7,55 @@ export function ModalAddProject({
 }: {
   setIsOpen: (isOpen: boolean) => void;
 }) {
-  const [title, setTitle] = useState<string>("");
-  const [category, setCategory] = useState<string>("");
-  const [time_worked, setTimeWorked] = useState<string>("");
-  const [link, setLink] = useState<string>("");
-  const [tag, setTag] = useState<string>("");
-
-  const [base64Image, setBase64Image] = useState<string | null>(null);
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [time_worked, setTimeWorked] = useState("");
+  const [link, setLink] = useState("");
+  const [tag, setTag] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
-
     if (file) {
       setSelectedFile(file);
-
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-
-      reader.onload = () => {
-        setBase64Image(reader.result as string);
-      };
-
-      reader.onerror = (error) => {
-        console.error("Erro ao converter para Base64:", error);
-      };
     }
   };
 
   const handleAddProject = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!base64Image) {
+    if (!selectedFile) {
       alert("Selecione uma imagem");
       return;
     }
 
-    const response = await fetch("http://localhost:5000/api/projects", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-        category,
-        time_worked,
-        image: base64Image,
-        link,
-        tag,
-      }),
-    });
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("category", category);
+    formData.append("time_worked", time_worked);
+    formData.append("link", link);
+    formData.append("tag", tag);
+    formData.append("image", selectedFile); // Anexa a imagem como arquivo
 
-    if (response.ok) {
-      setIsOpen(false);
-      return;
+    try {
+      const response = await fetch("http://localhost:5000/api/projects", {
+        method: "POST",
+        body: formData, 
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Erro desconhecido no servidor");
+      }
+
+      const data = await response.json(); 
+      console.log("Projeto criado com sucesso:", data);
+
+      setIsOpen(false); 
+    } catch (error) {
+      console.error("Erro ao adicionar projeto:", error);
+      alert("Erro ao adicionar projeto: " + error); 
     }
-
-    if (!response.ok) throw new Error("Erro ao adicionar projeto");
   };
 
   return (
@@ -77,10 +68,10 @@ export function ModalAddProject({
       >
         <h2 className="text-xl font-bold mb-4">Adicionar Projeto</h2>
 
-        <form onSubmit={(e) => handleAddProject(e)}>
+        <form onSubmit={handleAddProject}>
           <div className="mb-4">
             <label htmlFor="title" className="block text-gray-700">
-              Título
+              Título
             </label>
             <input
               type="text"
@@ -103,6 +94,7 @@ export function ModalAddProject({
               value={time_worked}
             />
           </div>
+
           <div className="mb-4">
             <label htmlFor="category" className="block text-gray-700">
               Categoria
@@ -115,28 +107,7 @@ export function ModalAddProject({
               value={category}
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="image" className="block text-gray-700">
-              Imagem
-            </label>
-            <input
-              type="file"
-              id="image"
-              className="w-full p-2 border border-gray-300 rounded-md"
-              onChange={handleFileChange}
-              accept="image/png"
-            />
-            <div>
-              {base64Image && (
-                <Image
-                  src={base64Image}
-                  alt="Imagem"
-                  width={200}
-                  height={200}
-                />
-              )}
-            </div>
-          </div>
+
           <div className="mb-4">
             <label htmlFor="link" className="block text-gray-700">
               Link
@@ -149,39 +120,39 @@ export function ModalAddProject({
               value={link}
             />
           </div>
+
           <div className="mb-4">
             <label htmlFor="tag" className="block text-gray-700">
               Tag
             </label>
-            <select
-              name="tag"
+            <input
+              type="text"
               id="tag"
               className="w-full p-2 border border-gray-300 rounded-md"
               onChange={(e) => setTag(e.target.value)}
               value={tag}
-            >
-              <option value="" selected disabled>
-                Selecione uma tag
-              </option>
-              <option value="#Front-End">#Front-End</option>
-              <option value="#Back-End">#Back-End</option>
-              <option value="#Full-Stack">#Full-Stack</option>
-            </select>
+            />
           </div>
-          <div className="flex justify-between">
-            <button
-              onClick={() => setIsOpen(false)}
-              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-            >
-              Fechar
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-            >
-              Adicionar
-            </button>
+
+          <div className="mb-4">
+            <label htmlFor="image" className="block text-gray-700">
+              Imagem
+            </label>
+            <input
+              type="file"
+              id="image"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              accept="image/*"
+              onChange={handleFileChange}
+            />
           </div>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600"
+          >
+            Adicionar
+          </button>
         </form>
       </motion.div>
     </div>
