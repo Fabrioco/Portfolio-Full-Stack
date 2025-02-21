@@ -9,7 +9,7 @@ interface NavButtonsLearningsProps {
 }
 
 export function NavButtonsLearnings({ onSelect }: NavButtonsLearningsProps) {
-  const [indexButton, setIndexButton] = React.useState<number>(0);
+  const [indexButton, setIndexButton] = React.useState<number | null>(null);
 
   return (
     <nav className="flex gap-4 items-center overflow-x-auto text-nowrap">
@@ -25,7 +25,7 @@ export function NavButtonsLearnings({ onSelect }: NavButtonsLearningsProps) {
           `}
           initial={{ opacity: 0, x: -100, scale: 0 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.5, delay: index * 0.2 }} // Reduzi o delay para evitar animação lenta
+          transition={{ duration: 0.5, delay: index * 0.2 }}
         >
           {text}
         </motion.button>
