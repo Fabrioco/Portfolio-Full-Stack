@@ -13,7 +13,9 @@
     "axios": "^1.7.9",
     "devicons": "^1.8.0",
     "framer-motion": "^12.4.3",
+    "i18next": "^24.2.2",
     "next": "15.1.7",
+    "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
