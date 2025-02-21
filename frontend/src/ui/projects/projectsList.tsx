@@ -11,9 +11,10 @@ interface ProjectData {
   time_worked: string;
   image: string;
   link: string;
+  tag: string;
 }
 
-export function ProjectsList() {
+export function ProjectsList({ tag }: { tag: string }) {
   const [projects, setProjects] = useState<ProjectData[]>([]);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -37,16 +38,17 @@ export function ProjectsList() {
         if (!response.ok) throw new Error("Erro ao buscar projetos");
 
         const data: ProjectData[] = await response.json();
-        setProjects(data);
+        const tagModified = tag.replace("", "#");
+        const dataFiltered = data.filter((project) => project.tag === tagModified);
+        setProjects(dataFiltered);
       } catch (error) {
         console.error("Erro ao buscar projetos:", error);
-      } finally {
       }
     }
 
     fetchProjects();
-  }, []);
-  console.log(projects);
+  }, [tag]);
+
   return (
     <div className="w-full overflow-x-auto flex flex-row md:gap-10 gap-5 items-center">
       {projects.map((project, index) => (
