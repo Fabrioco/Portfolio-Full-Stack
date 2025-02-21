@@ -1,13 +1,11 @@
-import { NavButtonsProjects } from "@/ui/projects/navButton";
 import { TitleProject } from "@/ui/projects/titleProject";
-import { ProjectsList } from "@/ui/projects/projectsList";
+import { SelectionTagProject } from "@/ui/projects/selectionTagProject";
 
 export default function Projects() {
   return (
     <div className="h-full flex flex-col gap-10">
       <TitleProject />
-      <NavButtonsProjects />
-      <ProjectsList />
+      <SelectionTagProject />
     </div>
   );
 }

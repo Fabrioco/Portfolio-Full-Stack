@@ -10,6 +10,7 @@ interface ProjectProps {
     time_worked: string;
     image: string;
     link: string;
+    tag: string;
   };
 }
 
