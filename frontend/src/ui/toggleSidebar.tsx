@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export const ToggleSidebar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [width, setWidth] = useState<number>(0);
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
