@@ -1,5 +1,4 @@
-const Sequelize = require("sequelize");
-require("dotenv").config();
+const { Sequelize } = require("sequelize");
 
 const database = new Sequelize(process.env.DATABASE_URL, {
   dialect: "postgres",
@@ -7,9 +6,14 @@ const database = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false, 
+      rejectUnauthorized: false, // Necessário para conectar ao Render
     },
   },
 });
+
+database
+  .authenticate()
+  .then(() => console.log("Conectado ao banco de dados!"))
+  .catch((err) => console.error("Erro ao conectar ao banco de dados:", err));
 
 module.exports = database;
