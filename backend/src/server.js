@@ -16,10 +16,15 @@ app.use(
   })
 );
 
-app.use("/api/projects", routerProject);
+app.get("/api/projects", async (req, res) => {
+  try {
+    const projects = await Project.findAll(); // Exemplo de consulta ao banco de dados
+    res.json(projects);
+  } catch (error) {
+    res.status(500).json({ error: "Erro ao buscar projetos" });
+  }
+});
 
-database.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log("Server is running on port ", PORT);
-  });
+app.listen(PORT, () => {
+  console.log("Server is running on port ", PORT);
 });
