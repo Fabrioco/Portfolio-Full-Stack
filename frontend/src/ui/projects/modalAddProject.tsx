@@ -35,26 +35,29 @@ export function ModalAddProject({
     formData.append("time_worked", time_worked);
     formData.append("link", link);
     formData.append("tag", tag);
-    formData.append("image", selectedFile); // Anexa a imagem como arquivo
+    formData.append("image", selectedFile);
 
     try {
-      const response = await fetch("http://localhost:5000/api/projects", {
-        method: "POST",
-        body: formData, 
-      });
+      const response = await fetch(
+        "https://portfolio-full-stack-n2or.onrender.com/api/projects",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || "Erro desconhecido no servidor");
       }
 
-      const data = await response.json(); 
+      const data = await response.json();
       console.log("Projeto criado com sucesso:", data);
 
-      setIsOpen(false); 
+      setIsOpen(false);
     } catch (error) {
       console.error("Erro ao adicionar projeto:", error);
-      alert("Erro ao adicionar projeto: " + error); 
+      alert("Erro ao adicionar projeto: " + error);
     }
   };
 
