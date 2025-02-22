@@ -11,16 +11,15 @@ routerProject.get("/", async (req, res) => {
     const projects = await Project.findAll();
 
     const projectsWithImage = projects.map((project) => {
-      let imageBase64 = project.image.toString("base64"); 
+      let imageBase64 = project.image.toString("base64");
 
-      
       if (!imageBase64.startsWith("data:image/png;base64,")) {
         imageBase64 = `data:image/png;base64,${imageBase64}`;
       }
 
       return {
         ...project.dataValues,
-        image: imageBase64, 
+        image: imageBase64,
       };
     });
 
@@ -47,8 +46,9 @@ routerProject.post("/", upload.single("image"), async (req, res) => {
 
     res.status(201).json(project);
   } catch (error) {
-    console.log(error);
-    res.status(500).json({ error: "Erro ao criar projeto" }); 
+    console.log("Erro ao criar projeto:", error);
+    res.status(500).json({ error: "Erro ao criar projeto" });
   }
 });
+
 module.exports = routerProject;
