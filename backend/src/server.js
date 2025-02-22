@@ -8,7 +8,13 @@ const app = Express();
 const PORT = process.env.PORT || 5000;
 
 app.use(Express.json({ limit: "10mb" }));
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://portfolio-full-stack-yj8l.vercel.app/dashboard",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use("/api/projects", routerProject);
 
