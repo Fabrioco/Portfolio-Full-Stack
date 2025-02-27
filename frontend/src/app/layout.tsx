@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/images/favicon.png" />
       </head>
       <body
         className={`${montserrat.className} ${montserratAlternates.className} antialiased bg-background`}
