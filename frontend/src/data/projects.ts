@@ -1,0 +1,58 @@
+import { ProjectData } from "@/ui/projects/projectsList";
+
+export const projectsData: ProjectData[] = [
+  {
+    id: 1,
+    title: "HotMart - Clone Udemy",
+    category: "E-Commerce",
+    time_worked: "1 Mês",
+    image: "/images/projects/hotmart.png",
+    link: "hotmart-frontend.vercel.app",
+    tag: "#Full-Stack",
+  },
+  {
+    id: 2,
+    title: "Agendamento de Barbearia",
+    category: "Landing Page",
+    time_worked: "2 Semanas",
+    image: "/images/projects/barbearia.png",
+    link: "https://site-barbearia-gray.vercel.app/",
+    tag: "#Front-End",
+  },
+  {
+    id: 3,
+    title: "Dog Imperador",
+    category: "Landing Page",
+    time_worked: "1 Semana",
+    image: "/images/projects/dogImperador.png",
+    link: "https://dog-imperador.vercel.app/",
+    tag: "#Front-End",
+  },
+  {
+    id: 4,
+    title: "Blog",
+    category: "API",
+    time_worked: "1 Semana",
+    image: "/images/projects/blog.png",
+    link: "https://github.com/Fabrioco/meu-blog-api",
+    tag: "#Back-End",
+  },
+  {
+    id: 5,
+    title: "Style Haven",
+    category: "E-Commerce",
+    time_worked: "3 Semanas",
+    image: "/images/projects/style.png",
+    link: "https://e-commerce-fullstack-sepia.vercel.app/",
+    tag: "#Full-Stack",
+  },
+  {
+    id: 6,
+    title: "Reserva de Restaurante",
+    category: "API",
+    time_worked: "1 Semana",
+    image: "/images/projects/restaurante.png",
+    link: "https://github.com/Fabrioco/Reserva-Restaurante",
+    tag: "#Back-End",
+  },
+];
