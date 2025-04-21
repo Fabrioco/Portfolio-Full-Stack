@@ -7,7 +7,7 @@ export const projectsData: ProjectData[] = [
     category: "E-Commerce",
     time_worked: "1 Mês",
     image: "/images/projects/hotmart.png",
-    link: "hotmart-frontend.vercel.app",
+    link: "https://hotmart-frontend.vercel.app",
     tag: "#Full-Stack",
   },
   {
